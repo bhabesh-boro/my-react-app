@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:5000/";
+const baseUrl = "http://3.132.253.230:5000/";
 const axiosHeaders = {
   headers: {
     "Access-Control-Allow-Origin": "*",
