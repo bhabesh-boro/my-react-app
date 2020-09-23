@@ -8,7 +8,7 @@ export default function DetailsPage() {
 
   useEffect(() => {
     axios
-      .get("http://www.omdbapi.com/?apikey=67be9b43&i=tt1905041")
+      .get(`http://www.omdbapi.com/?apikey=67be9b43&i=${params.key}`)
       .then((res) => {
         setDetails(res.data);
         console.log(res.data);
