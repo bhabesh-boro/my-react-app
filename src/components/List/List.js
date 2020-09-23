@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function List(props) {
   const elements = props.elements || []; // Array of movies
@@ -10,12 +10,13 @@ export default function List(props) {
      * Second argument is input for card component.
      * A list in react has to have a unique input property of key.
      */
-    return React.createElement(component, { movie: element, key: element.imdbID })
-  }
+    return React.createElement(component, {
+      movie: element,
+      key: element.imdbID,
+    });
+  };
 
   return (
-    <div className="row">
-      {elements.map(e => createReactElement(e))}
-    </div>
-  )
+    <div className="row">{elements.map((e) => createReactElement(e))}</div>
+  );
 }

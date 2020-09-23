@@ -17,8 +17,9 @@ export default function Search(props) {
       <button
         className="btn btn-success clear-margin-top"
         onClick={handleSubmit}
+        onKeyPress={handleSubmit}
       >
-        Search
+        Search Movies
       </button>
     </div>
   );

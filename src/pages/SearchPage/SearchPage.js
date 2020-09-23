@@ -10,6 +10,7 @@ import { baseUrl, axiosHeaders } from "../../utils/constants";
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const onSubmitSuccess = (res) => {
     // Data validation before setting searchResult
@@ -19,10 +20,14 @@ export default function SearchPage() {
   };
 
   const onSubmit = (searchTerm) => {
+    setLoading(true);
     const uri = `${baseUrl}search?title=${searchTerm}`;
     axios
       .get(uri, axiosHeaders)
-      .then((res) => onSubmitSuccess(res))
+      .then((res) => {
+        onSubmitSuccess(res);
+        setLoading(false);
+      })
       .catch((err) => console.error(err));
   };
 
@@ -30,7 +35,10 @@ export default function SearchPage() {
     <>
       <Search value={searchTerm} onChange={setSearchTerm} onSubmit={onSubmit} />
       <br />
-      <List elements={searchResult} component={Card} />
+      <div className="container">
+        {loading && `Searching movies: ${searchTerm}`}
+      </div>
+      {!loading && <List elements={searchResult} component={Card} />}
     </>
   );
 }

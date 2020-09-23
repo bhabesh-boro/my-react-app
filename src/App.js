@@ -1,13 +1,8 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import './App.css';
-import SearchPage from './pages/SearchPage/SearchPage';
-import DetailsPage from './pages/DetailsPage/DetailsPage';
-import HomePage from './pages/HomePage/HomePage';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
 
 /**
  * The Router maps a url to a component
